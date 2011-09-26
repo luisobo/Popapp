@@ -16,12 +16,13 @@ Clone the repository
 cd Popapp</code></pre>
 Build the javascript
 <pre><code>cake build</code></pre>
+
 Copy the files to your public dir:
 <pre><code>cp -r public/javascript your/public/dir
-cp -r public/img your/public/dir</pre></code>  
+cp -r public/img your/public/dir</code></pre>  
+
 Import the javascript in you html file:
-<pre><code>&lt;script src="javascript/compiled/Popapp.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
-</pre></code>  
+<pre><code>&lt;script src="javascript/compiled/Popapp.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;</code></pre>
 
 Basic Usage
 -----
@@ -90,9 +91,12 @@ For instance, you can keep track of which users dimissed a certain message.
 	$.post(url)
 </code></pre>
 
+The message id is passed to the Popapp alogn with the contents of the message:
+<pre><code>popapp.contents '&lt;div>Welcome to my Webapp!&lt;/div>', 'welcome_msg'</code></pre>
+
 Using Popapp with javascript
 -----
-The examples provided in this page are written in [coffeescript](http://jashkenas.github.com/coffee-script). Of course, you can use with javascript too. You'll need a couple of `var`'s and semicolons and you are ready to go!
+The examples provided in this page are written in [coffeescript](http://jashkenas.github.com/coffee-script). Of course, you can use it with javascript too. You'll need a couple of `var`'s and semicolons and you are ready to go!
 
 ###Dependencies###
 [jQuery](http://www.jquery.com)
