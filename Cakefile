@@ -14,6 +14,7 @@ examples_folder = 'examples'
 compile_folder = (input_folder, output_folder) ->
 	output_folder = output_folder ? input_folder
 	
+	make_dir output_folder
 	artifacts = fs.readdirSync(input_folder)
 	artifacts = (item for item in artifacts when path.extname(item) is '.coffee')
 	for item in artifacts
@@ -35,6 +36,9 @@ compile_file =  (input_file, output_file)->
 			throw error
 		else
 			util.log 'Built ' + output_file
+			
+make_dir = (folder_path) ->
+	child_process.spawn('mkdir', ['-p', folder_path])
 
 task 'build', 'Builds the project', ->
 	util.log "Building #{src_folder}"
