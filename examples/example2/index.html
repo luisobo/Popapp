@@ -1,0 +1,42 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.4/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+	<script src="javascript/compiled/Popapp.js" type="text/javascript" charset="utf-8"></script>
+	<script>
+	function show_popapp() {
+		var popapp = new Popapp();
+		popapp.content('<div style="font-family: Helvetica"><p>This example shows how to use Popapp to keep track of which users\
+		 dismiss a certain message.</p><p>If you click the close button a request will be sent to the\
+		 server with the user id and the message id. The server is responsible of store this\
+		 information</p><p>Click the close button now and take a look to the server\'s\
+		 output:<br><p><span style="font-family: courier">User some_user_id closed the popup with the\
+		 message some_message_id</span></p></div>', 'some_message_id');
+		popapp.decorate(new RoundCornersCss3(), new ShadowCss3(), new InnerShadowCss3());
+		
+		popapp.on_close(function(object) {
+			// Obtain the user id
+			user_id = 'some_user_id';
+			// Obtain the message id
+			message_id = object.message_id();
+			url = 'record_popup_close?message_id=' + message_id + '&user_id=' + user_id
+			
+			// Save in the server the event
+			jQuery.post(url)
+		});
+		popapp.show();
+	}
+	</script>
+</head>
+<body>
+	<form>
+	<div>
+	<input type="button" name="abutton" value="Show Popapp" onclick="show_popapp();" />
+	</div>
+	</form>
+</body>
+</html>
+
+
+
