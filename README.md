@@ -9,6 +9,19 @@ Features
 * No need for css files
 * Get notified when a user dismiss a Popapp
 
+Build and installation
+-----
+Clone the repository
+<pre><code>git clone git://github.com/luisobo/Popapp.git
+cd Popapp</code></pre>
+Build the javascript
+<pre><code>cake build</code></pre>
+Copy the files to your public dir:
+<pre><code>cp -r public/javascript your/public/dir
+cp -r public/img your/public/dir</pre></code>  
+Import the javascript in you html file:
+<pre><code>&lt;script src="javascript/compiled/Popapp.js" type="text/javascript" charset="utf-8"&gt;&lt;/script&gt;
+</pre></code>  
 
 Basic Usage
 -----

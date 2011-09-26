@@ -71,7 +71,7 @@ task 'build:example2', 'Prepares the example 2', ->
 	child_process.spawn('cp', ['-r', images_folder, example2])
 	child_process.spawn('cp', ['-r', javascript_folder, example2])
 	
-	util.log "Example 2 ready.\nRun\n  cs #{example2}/server-side\n  node server.js\nand browse http://localhost:8080"	
+	util.log "Example 2 ready.\nRun\n  cd #{example2}/server-side\n  node server.js\nand browse http://localhost:8080"	
 	
 task 'test', 'Executes the test server', ->
 	util.log 'Running test server. Browse http://localhost:8124'
