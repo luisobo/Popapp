@@ -148,7 +148,7 @@ class global_scope.Popapp
 	
 	'''
 	Adds decorators to Popapp.
-	See PopupDecorator.
+	See PopappDecorator.
 	'''	
 	decorate: (decorators...) ->
 		for decorator in decorators
@@ -208,7 +208,7 @@ class global_scope.Popapp
 		for handler in @close_handlers
 			handler(this)
 		
-class global_scope.PopupDecorator
+class global_scope.PopappDecorator
 	decorate_popup: (popup) ->
 		popup
 
@@ -222,7 +222,7 @@ class global_scope.PopupDecorator
 		content
 
 
-class RoundCornersAndShadowWithImages extends PopupDecorator
+class RoundCornersAndShadowWithImages extends PopappDecorator
 
 	constructor: ->
 		@IMAGE_WIDTH = 40
@@ -311,7 +311,7 @@ class RoundCornersAndShadowWithImages extends PopupDecorator
 		table
 		
 	
-class global_scope.RoundCornersCss3 extends PopupDecorator
+class global_scope.RoundCornersCss3 extends PopappDecorator
 	
 	@DEFAULT =
 		RADIUS: '25px'
@@ -339,7 +339,7 @@ class global_scope.RoundCornersCss3 extends PopupDecorator
 			old = old.replace('px', '') if old?
 			popup.css(position, old - radius) if old > 0
 
-class global_scope.ShadowCss3 extends PopupDecorator
+class global_scope.ShadowCss3 extends PopappDecorator
 	
 	@DEFAULT = 
 		HORIZONTAL_OFFSET : '0'
@@ -378,7 +378,7 @@ class global_scope.ShadowCss3 extends PopupDecorator
 		"shadow(color=#{@_color}, direction=#{@_ie_direction}, strength=#{@_ie_strength})"
 		
 	
-class global_scope.InnerShadowCss3 extends PopupDecorator
+class global_scope.InnerShadowCss3 extends PopappDecorator
 	
 	@DEFAULT = 
 		HORIZONTAL_OFFSET : '0'
