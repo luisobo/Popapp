@@ -6,8 +6,8 @@ Features
 -----
 * Highly customizable
 * Auto resize
-* No need for css files
-* Get notified when a user dismiss a Popapp
+* No need of css files
+* Get notified when a user dismisses a Popapp
 
 Build and installation
 -----
@@ -93,6 +93,20 @@ For instance, you can keep track of which users dimissed a certain message.
 
 The message id is passed to the Popapp alogn with the contents of the message:
 <pre><code>popapp.contents '&lt;div>Welcome to my Webapp!&lt;/div>', 'welcome_msg'</code></pre>
+
+Examples
+----
+<b>Building the examples</b>  
+It's as easy as:
+<pre><code>cake build:examples</code></pre>
+
+<b>Running the examples</b>  
+The first example show the basic functionality of a Popapp. Just open `examples/example1/index.html` and take a look.
+
+The second example show an interaction with a simple server that logs when a user dismisses a Popapp. Run the server and browse the example:
+<pre><code>cd examples/example2/server-side
+node server.js</code></pre>
+Browse [`http://localhost:8080`](http://localhost:8080) and enjoy.
 
 Using Popapp with javascript
 -----
