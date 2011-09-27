@@ -101,9 +101,9 @@ It's as easy as:
 <pre><code>cake build:examples</code></pre>
 
 <b>Running the examples</b>  
-The first example show the basic functionality of a Popapp. Just open `examples/example1/index.html` and take a look.
+The first example shows the basic functionality of a Popapp. Just open `examples/example1/index.html` and take a look.
 
-The second example show an interaction with a simple server that logs when a user dismisses a Popapp. Run the server and browse the example:
+The second example shows an interaction with a simple server that logs when a user dismisses a Popapp. Run the server and browse the example:
 <pre><code>cd examples/example2/server-side
 node server.js</code></pre>
 Browse [`http://localhost:8080`](http://localhost:8080) and enjoy.
